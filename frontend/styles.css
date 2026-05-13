@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px 30px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.refresh-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    padding: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background: #f7f9fc;
+    z-index: 10;
+}
+
+th {
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+    border-bottom: 2px solid #e1e8ed;
+    cursor: pointer;
+    user-select: none;
+}
+
+th:hover {
+    background: #e8ecf1;
+}
+
+td {
+    padding: 8px;
+    border-bottom: 1px solid #e1e8ed;
+    color: #34495e;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #95a5a6;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #f7f9fc;
+}
+
+.refresh-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.2s;
+}
+
+.refresh-btn:hover {
+    transform: scale(1.05);
+}
+
+td:nth-child(4) {
+    font-weight: 600;
+}
+
+tr td:nth-child(4):contains('R') {
+    color: #27ae60;
+}
+
+td:contains('S') {
+    color: #3498db;
+}
+
+@media (max-width: 768px) {
+    th, td {
+        font-size: 11px;
+        padding: 6px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    .container {
+        margin: 10px;
+    }
+}

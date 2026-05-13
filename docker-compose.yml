@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: system-monitor-backend
+    ports:
+      - "8080:80"
+    networks:
+      - monitor-network
+    volumes:
+      - /proc:/host/proc:ro
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: system-monitor-frontend
+    ports:
+      - "80:80"
+    networks:
+      - monitor-network
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+networks:
+  monitor-network:
+    driver: bridge

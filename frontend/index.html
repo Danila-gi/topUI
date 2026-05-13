@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>System Process Monitor</h1>
+            <div class="refresh-info">
+                <span>Last update: <span id="timestamp">-</span></span>
+                <span>Auto-refresh every 3 seconds</span>
+            </div>
+        </header>
+
+        <div class="table-wrapper">
+            <table id="process-table">
+                <thead>
+                    <tr>
+                        <th>PID</th>
+                        <th>Command</th>
+                        <th>State</th>
+                        <th>CPU (%)</th>
+                        <th>RSS (KB)</th>
+                        <th>Virtual (KB)</th>
+                        <th>Priority</th>
+                        <th>Nice</th>
+                        <th>Time (ms)</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+                        <td colspan="12" class="loading">Loading data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <button onclick="refreshData()" class="refresh-btn">⟳ Refresh Now</button>
+        </div>
+    </div>
+
+    <script src="dist/bundle.js"></script>
+</body>
+</html>
